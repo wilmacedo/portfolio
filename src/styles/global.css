@@ -12,4 +12,25 @@
   .animation-delay-1000 {
     animation-delay: 1s;
   }
+
+  .text-underline:hover::after {
+    width: 100%;
+  }
+
+  .text-underline::after {
+    width: 0px;
+    height: 1px;
+
+    display: block;
+    position: relative;
+
+    content: "";
+    
+    bottom: 0.15rem;
+    
+    background: linear-gradient(90deg, #fa29bb 0%, #a94dff 100%);
+    opacity: 0.5;
+
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  }
 }
