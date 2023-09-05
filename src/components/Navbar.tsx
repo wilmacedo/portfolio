@@ -27,11 +27,6 @@ export default function Navbar() {
     };
   }, []);
 
-  function currentTab() {
-    const { hash } = window.location;
-    return hash.length === 0 ? "home" : hash;
-  }
-
   function toggleMobileMenu() {
     setOpened((prev) => !prev);
   }
@@ -87,9 +82,8 @@ export default function Navbar() {
             {routes.map((route, index) => (
               <Link
                 key={index}
-                data-tab={currentTab()}
                 href={`#${route.path}`}
-                className={`opacity-50 transition-all hover:opacity-100 data-[tab=${route.path}]:opacity-100`}
+                className={`transition-all hover:opacity-70`}
               >
                 <span className="transition-all duration-[350ms] group-data-[scrolled=true]:text-sm">
                   {route.name}
@@ -97,7 +91,7 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <a href="/resume_us.pdf" download>
+            <a href="/resume_v3.pdf" download>
               <div className="p-px rounded-md bg-gradient-to-r from-[#fa29bb] to-[#a94dff]">
                 <div className="px-3.5 py-1.5 bg-black transition-all rounded-md hover:opacity-90 group-data-[scrolled=true]:backdrop-blur-sm">
                   <span className="transition-all duration-[350ms] group-data-[scrolled=true]:text-sm">
@@ -139,7 +133,7 @@ export default function Navbar() {
             </div>
           ))}
 
-          <a href="/resume_us.pdf" download>
+          <a href="/resume_v3.pdf" download>
             <div className="p-px rounded-md bg-gradient-to-r from-[#fa29bb] to-[#a94dff]">
               <div className="px-3.5 py-1.5 bg-[#19111c] text-center transition-all rounded-md hover:opacity-90 group-data-[scrolled=true]:backdrop-blur-sm">
                 <span className="transition-all duration-[350ms] group-data-[scrolled=true]:text-sm">
